@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetBus - Bus Ticket Booking</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>GetBus</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="#booking"><i class="fas fa-ticket-alt"></i> Book Now</a></li>
+            <li><a href="#features"><i class="fas fa-cogs"></i> Features</a></li>
+            <li><a href="#contact-us"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            <li><a href="index.php" class="us"><i class="fas fa-user "></i> Login/Sign Up</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Header -->
+    <header>
+        <div class="content">
+            <h1>Book Your Journey Now</h1>
+            <p>Safe, Comfortable, and Punctual Bus Services</p>
+            <button>Explore Buses</button>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <div id="booking" class="booking-section">
+        <h2>Book a Seat Now</h2>
+        <form class="form-group">
+            <div class="input-container">
+                <input id="source" type="text" placeholder="Source" required>
+                <i class="fa fa-exchange ico" aria-hidden="true" id="exchange-icon"></i>
+                <input id="destination" type="text" placeholder="Destination" required>
+            </div>
+            <input type="date" required>
+            <button type="submit">
+                <i class="fa fa-search"></i> Search Bus
+            </button>
+        </form>
+    </div>
+
+
+    <section id="features" class="features">
+        <h2>Your Safety is Our Priority</h2>
+        <div class="items">
+            <div class="item">
+                <div class="card">
+                    <img src="./image/247.png" alt="24/7 Support">
+                    <h3>24/7 Support</h3>
+                    <p>We provide round-the-clock support to ensure your journey is smooth and hassle-free. Whether you
+                        have a question about booking, need help with your ticket, or want assistance during your trip,
+                        we're always here to assist you!</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="card">
+                    <img src="./image/ladylock.png" alt="Secure Payment">
+                    <h3>Secure Payment</h3>
+                    <p>Your payment information is safe with us. We offer secure payment gateways with encryption to
+                        ensure your transactions are protected. Pay with ease and confidence, knowing your financial
+                        data is safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Sections: Safety and Support -->
+    <section class="safety-section slide-left">
+        <div class="left">
+            <h2>Your Safety Comes First</h2>
+            <p>We ensure the highest safety standards, including cleaning procedures and safe seating arrangements.</p>
+        </div>
+        <div class="right">
+            <img src="./image/rb_2148556556.png" alt="Safety">
+        </div>
+    </section>
+
+    <section class="support-section slide-right">
+        <div class="left">
+            <img src="./image/rb_2495.png" alt="Support">
+        </div>
+        <div class="right">
+            <h2>Need Assistance?</h2>
+            <p>If you have any questions or need support, feel free to reach out to us. We're here to help you!</p>
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" class="contact-us">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Company Logo and Description (Vertical Layout) -->
+            <div class="logo-description">
+                <div class="footer-logo">
+                    <img src="./image/getnew.png" alt="GetBus Logo" class="logo">
+                </div>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#booking"><i class="fas fa-ticket-alt"></i> Book Now</a></li>
+                    <li><a href="#features"><i class="fas fa-cogs"></i> Features</a></li>
+                    <li><a href="#contact-us"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    <li><a href="terms.html"><i class="fa fa-file-alt"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Get in Touch Section -->
+            <div class="get-in-touch">
+                <h3 >Get in touch</h3>
+                <p>Plot No. 80, Institutional Area, Sector 32, Gurugram, Haryana- 122001</p>
+                <p>+91 9667676919</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon tw"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon yt"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Footer Copyright -->
+        <p>&copy; 2024 <b>GetBus</b>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Top Scroll Button -->
+    <button class="top-scroll-btn" id="topScrollBtn" onclick="scrollToTop()">
+        ↑
+    </button>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
