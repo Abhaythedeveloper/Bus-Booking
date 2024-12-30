@@ -1,5 +1,5 @@
-  // Show the scroll-to-top button when the user scrolls down
-  window.onscroll = function () {
+// Show the scroll-to-top button when the user scrolls down
+window.onscroll = function () {
     let scrollButton = document.getElementById("topScrollBtn");
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         scrollButton.style.display = "block";
@@ -12,6 +12,7 @@
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(".safety-section, .support-section");
 
@@ -32,27 +33,29 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll();
 });
 
-//hamburger
-
+// Hamburger menu toggle
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('nav ul');
 
+// Toggle the menu visibility
 function toggleMenu() {
-    menu.classList.toggle('show');  // This toggles the 'show' class on the <ul> element
+    menu.classList.toggle('show');
 }
 
+// Close the menu if clicked outside
+document.addEventListener('click', function (e) {
+    if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+    }
+});
 
-//Swapping 
+// Swapping for input fields
+const exchangeIcon = document.getElementById('exchange-icon');
+const sourceInput = document.getElementById('source');
+const destinationInput = document.getElementById('destination');
 
- // Get the exchange icon and input fields
- const exchangeIcon = document.getElementById('exchange-icon');
- const sourceInput = document.getElementById('source');
- const destinationInput = document.getElementById('destination');
-
- // Add click event listener to the icon
- exchangeIcon.addEventListener('click', () => {
-     // Swap the values of source and destination
-     const temp = sourceInput.value;
-     sourceInput.value = destinationInput.value;
-     destinationInput.value = temp;
- });
+exchangeIcon.addEventListener('click', () => {
+    const temp = sourceInput.value;
+    sourceInput.value = destinationInput.value;
+    destinationInput.value = temp;
+});
