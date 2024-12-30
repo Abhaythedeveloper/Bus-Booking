@@ -127,10 +127,6 @@ nav ul li a:hover {
     }
 }
 
-
-
-
-
 /* Header Section */
 header {
     position: relative;
@@ -144,10 +140,13 @@ header {
 }
 
 header .content {
+    /* Background color with opacity, uncomment if needed */
     /* background: rgba(255, 255, 255, 0.812); */
     padding: 30px;
     border-radius: 15px;
     max-width: 500px;
+    width: 100%;  /* Make sure the content width adapts */
+    box-sizing: border-box;  /* Ensures padding doesn't exceed the container width */
     position: relative;
 }
 
@@ -171,12 +170,46 @@ header .content button {
     cursor: pointer;
     font-size: 1.2rem;
     transition: background 0.3s, transform 0.3s;
+    display: block;  /* Ensures the button is treated as a block element for centering */
+    margin: 0 auto;  /* This centers the button horizontally */
 }
 
 header .content button:hover {
     background: #e0a800;
     transform: scale(1.05);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .content h1 {
+        font-size: 2.5rem;  /* Adjust font size on tablets */
+    }
+
+    header .content p {
+        font-size: 1.1rem;  /* Adjust font size on tablets */
+    }
+
+    header .content button {
+        padding: 10px 20px;  /* Adjust button size on smaller screens */
+        font-size: 1.1rem;  /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    header .content h1 {
+        font-size: 2rem;  /* Adjust font size on mobile */
+    }
+
+    header .content p {
+        font-size: 1rem;  /* Adjust font size on mobile */
+    }
+
+    header .content button {
+        padding: 8px 15px;  /* Adjust button size on mobile */
+        font-size: 1rem;  /* Adjust button font size */
+    }
+}
+
 
 
 
