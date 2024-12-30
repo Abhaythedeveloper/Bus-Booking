@@ -14,7 +14,7 @@ body {
     scroll-behavior: smooth;
     letter-spacing: 2px;
 }
-/* Navbar Responsive */
+/* Navbar Style */
 nav {
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,16 @@ nav ul li a:hover {
     color: #ffc107;
 }
 
+/* Responsive Navbar for Tablets and Mobile */
 @media (max-width: 768px) {
+    nav {
+        padding: 10px 20px; /* Adjust navbar padding for smaller screens */
+    }
+
+    nav h1 {
+        font-size: 1.5rem; /* Smaller font for mobile */
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -93,7 +102,33 @@ nav ul li a:hover {
     .hamburger {
         display: block;
     }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Slightly larger font size for mobile */
+        margin: 15px 0;
+    }
+
+    nav ul li a:hover {
+        color: #ffc107;
+    }
 }
+
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 1.3rem; /* Smaller font for very small devices */
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        font-size: 1.5rem;
+    }
+}
+
+
+
 
 
 /* Header Section */
@@ -143,27 +178,38 @@ header .content button:hover {
     transform: scale(1.05);
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Booking Section */
 .booking-section {
     background: #ffffff;
-    padding: 60px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 70%;
+    padding: 80px 20px; /* Adjusted for responsiveness */
+    margin: 40px auto; /* Center and add spacing */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slight shadow */
+    width: 90%;
+    max-width: 1200px; /* Keeps section manageable on wide screens */
     border-radius: 12px;
     animation: fadeIn 1s ease-in-out;
     text-align: center;
 }
 
 .booking-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Adjust heading size */
     color: #0056b3;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Add spacing */
 }
 
 .booking-section .form-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Enables wrapping for smaller screens */
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
@@ -171,18 +217,18 @@ header .content button:hover {
 
 .booking-section input,
 .booking-section button {
-    padding: 25px;
-    font-size: 1.1rem;
+    padding: 15px; /* Adjusted padding for balance */
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: box-shadow 0.3s, transform 0.3s;
-    width: 350px;
-    letter-spacing: 2px;
+    width: 100%; /* Responsive width for smaller screens */
+    max-width: 400px; /* Limit width on larger screens */
 }
 
 .booking-section input:focus {
     outline: none;
-    box-shadow: 0 0 10px #0056b3;
+    box-shadow: 0 0 12px #0056b3;
 }
 
 .booking-section button {
@@ -190,16 +236,163 @@ header .content button:hover {
     color: white;
     border: none;
     cursor: pointer;
+    max-width: 200px; /* Restrict button size */
 }
 
 .booking-section button:hover {
     background: #003f8e;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-.ico{
+.ico {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #0056b3;
     cursor: pointer;
 }
+
+/* Apply to the form */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Optional, for spacing between elements */
+}
+
+/* Styling for the input container to keep inputs in one line */
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between source and destination inputs */
+}
+
+/* Increase size of text inputs */
+.input-container input {
+    width: 250px; /* Increase width for source and destination inputs */
+    padding: 10px; /* Optional, for better padding inside inputs */
+}
+
+/* Make the date input smaller */
+.form-group input[type="date"] {
+    width: 150px; /* Smaller width for the date input */
+    padding: 10px;
+}
+
+/* Styling for the button */
+button {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between the icon and the text */
+}
+
+/* Responsive styling for tablet (min-width: 768px and max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .booking-section {
+        padding: 60px 20px; /* Adjust padding for tablet screens */
+    }
+
+    .booking-section h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Stack inputs vertically */
+    .input-container {
+        flex-direction: column; /* Stack inputs and icon vertically */
+        align-items: center; /* Center align the inputs */
+        gap: 15px; /* Increase gap for vertical spacing */
+    }
+
+    /* Make the source input and destination input take full width */
+    #source,
+    #destination {
+        width: 500px;
+        max-width: none; /* Remove max-width */
+    }
+
+    /* Adjust the icon to be centered and above inputs */
+    .ico {
+        font-size: 2rem; /* Larger icon for better visibility */
+        margin: 10px 0; /* Space above and below the icon */
+    }
+
+    /* Date input should also be full width on tablet */
+    .form-group input[type="date"] {
+        width: 500px;
+        max-width: none; /* Remove max-width for full width */
+    }
+
+    .booking-section button {
+        width: 300px ; /* Button takes full width */
+        max-width: none; /* Remove max-width */
+    }
+}
+
+/* Responsive styling for mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .booking-section {
+        padding: 40px 10px; /* Compact padding for smaller screens */
+    }
+
+    .booking-section h2 {
+        font-size: 1.8rem; /* Smaller heading on mobile */
+    }
+
+    .input-container {
+        flex-direction: column; /* Stack inputs vertically on mobile */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #source,
+    #destination {
+        width: 300px; /* Full width inputs */
+        max-width: none; /* Remove max-width for full width */
+        margin: auto;
+    }
+
+    .ico {
+        font-size: 2rem; /* Larger icon for better visibility */
+        margin: 0 235px; /* Spacing around the icon */
+    }
+
+    .booking-section input,
+    .booking-section button {
+        width: 200px; /* Full width inputs and buttons */
+        max-width: none; /* Remove max-width */
+    }
+
+    .booking-section button {
+        max-width: none; /* Button takes full width */
+    }
+}
+
+/* Responsive design for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .booking-section {
+        padding: 30px 10px; /* Compact padding for very small screens */
+    }
+
+    #source,
+    #destination {
+        width: 250px; /* Smaller width for very small screens */
+        font-size: 0.85rem; /* Further reduce font size */
+        padding: 6px; /* Further reduce padding */
+    }
+
+
+    .booking-section h2 {
+        font-size: 1.6rem; /* Smaller heading */
+    }
+
+    .input-container {
+        flex-direction: column; /* Stack inputs vertically */
+    }
+
+    .ico {
+        font-size: 2rem; /* Larger icon */
+    }
+}
+
+
 /* Features Section */
 .features {
     text-align: center;
